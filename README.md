@@ -1,13 +1,19 @@
-🖥️ Trabajo Práctico Final - Grupo Hein:
-
-📜 Nuestro Proyectoc:
+## 🖥️ Trabajo Práctico Final - Grupo Hein:
 
 
-🏗️ Estructura del Proyecto::
+## 📜 Sobre nuestro Proyecto:
 
-🛠️ Tecnologías utilizadas
-Lenguaje: Python
+  
 
-🆒 Equipo:
-Contreras, Leonel
-Gimenez, Macarena
+## 🏗️ Estructura del Proyecto
+
+
+## 🛠️ Tecnologías Utilizadas
+
+  * **Lenguaje**: Python
+
+
+  ## 🆒 Equipo 
+   * Contreras, Leonel
+   * Giménez, Macarena
+     
