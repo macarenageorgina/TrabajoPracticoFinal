@@ -24,6 +24,22 @@ Desarrollamos un Gestor de Gastos que ayuda a llevar el control de las finanzas 
 
 ## 🚀 Cómo ejecutarlo:
 
+
+1.  **Clona el repositorio:**
+
+    ```sh
+    git clone <https://github.com/macarenageorgina/TrabajoPracticoFina>
+    
+    ```
+
+2.  **Ingresar a la carpeta del proyecto y ejecutar:**
+
+    ```sh
+    python main.py
+    ```
+
+
+
   ## 🆒 Equipo: 
    * Contreras, Leonel
    * Giménez, Macarena
