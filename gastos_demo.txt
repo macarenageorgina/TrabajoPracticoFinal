@@ -1,0 +1,29 @@
+ULTIMO_ID=20
+CATEGORIAS=Alimentación,Transporte,Ocio,Servicios
+
+CALENDARIO=0,0,0,0,0,0,0
+CALENDARIO=0,0,0,0,0,0,0
+CALENDARIO=0,0,0,0,0,0,0
+CALENDARIO=0,0,0,0,0,0,0
+CALENDARIO=0,0,0,0,0,0,0
+
+GASTO=1;01/01/2024;Alimentación;Compra en supermercado;2500.50
+GASTO=2;02/01/2024;Transporte;Carga SUBE;1200
+GASTO=3;03/01/2024;Ocio;Cine 3D;3500
+GASTO=4;04/01/2024;Servicios;Factura de luz;7800
+GASTO=5;05/01/2024;Alimentación;Hamburguesas;900
+GASTO=6;06/01/2024;Transporte;Nafta;4500
+GASTO=7;07/01/2024;Ocio;Spotify Premium;999
+GASTO=8;08/01/2024;Servicios;Internet Fibra;6500
+GASTO=9;09/01/2024;Alimentación;Verduras frescas;1800
+GASTO=10;10/01/2024;Servicios;Gas natural;5200
+GASTO=11;11/01/2024;Transporte;Taxi al trabajo;1600
+GASTO=12;12/01/2024;Ocio;Juego digital;11000
+GASTO=13;13/01/2024;Alimentación;Pizza familiar;3990
+GASTO=14;14/01/2024;Servicios;Agua corriente;3900
+GASTO=15;15/01/2024;Ocio;Entradas recital;25000
+GASTO=16;16/01/2024;Transporte;Revisión mecánica;8000
+GASTO=17;17/01/2024;Servicios;Cable TV;4500
+GASTO=18;18/01/2024;Alimentación;Carne y pollo;6200
+GASTO=19;19/01/2024;Transporte;Gomería;3000
+GASTO=20;20/01/2024;Ocio;Accesorios gaming;15000
