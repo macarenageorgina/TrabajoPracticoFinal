@@ -47,7 +47,7 @@ def buscar_gastos_por_palabra(gastos, palabra):
 # ======================================================
 
 def agregar_gasto(gastos, orden, categorias_usadas, calendario,
-                  ultimo_id, fecha, monto, categoria, descripcion):
+            ultimo_id, fecha, monto, categoria, descripcion):
     """
     Agrega un nuevo gasto al sistema.
     """
@@ -221,15 +221,7 @@ def gastos_ordenados_por_monto(gastos):
 # LAMBDA, MAP, FILTER, REDUCE
 # ======================================================
 
-aplicar_descuento = lambda monto: monto * 0.95 if monto > 10000 else monto
-
-
-def obtener_montos_con_descuento(gastos):
-    """
-    Aplica un descuento del 5% a gastos mayores a 10000.
-    """
-    return [aplicar_descuento(g["monto"]) for g in gastos.values()]
-
+calcular_iva = lambda monto:monto * 0.21
 
 def gastos_importantes(gastos, umbral):
     """
@@ -264,6 +256,12 @@ def promedio_gastos(gastos):
     total = reduce(lambda acum, g: acum + g["monto"], gastos.values(), 0)
     return total / len(gastos)
 
+def obtener_montos_con_iva(gastos):
+    return [
+        {"id": g["id"], "monto": g["monto"], "iva": calcular_iva(g["monto"])}
+        for g in gastos.values()
+        if g.get('estado', 'activo') == 'activo'
+    ]
 
 # ======================================================
 # REGEX
