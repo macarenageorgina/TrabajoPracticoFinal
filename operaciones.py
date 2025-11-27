@@ -372,6 +372,7 @@ def promedio_gastos(gastos):
 # REGEX
 # ======================================================
 
+
 def numeros_en_descripciones(gastos):
     """
     Extrae todos los números presentes en las descripciones de gastos activos.
