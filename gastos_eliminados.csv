@@ -1,6 +1,4 @@
 id,fecha,categoria,descripcion,monto,fecha_eliminacion,estado_original
-1,15/11/2025,Ocio,Test,1000,27/11/2025 21:46:00,activo
-1,15/11/2025,Ocio,Test,2000,27/11/2025 21:46:00,activo
-1,15/11/2025,Ocio,Test,1000,27/11/2025 21:53:07,activo
-1,15/11/2025,Ocio,Test,2000,27/11/2025 21:53:07,activo
-21,13/10/2025,Alimentación,Huevos,200.45,28/11/2025 10:31:48,activo
+22,14/11/2025,Transporte,Leche,200.0,28/11/2025 17:11:14,activo
+1,15/11/2025,Ocio,Test,1000,28/11/2025 17:34:10,activo
+1,15/11/2025,Ocio,Test,2000,28/11/2025 17:34:10,activo

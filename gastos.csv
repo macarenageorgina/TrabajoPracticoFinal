@@ -1,5 +1,5 @@
 id,fecha,categoria,descripcion,monto,estado
-21,13/10/2025,Alimentación,Huevos,200.45,activo
+21,13/10/2025,Alimentación,Huevos,200.45,eliminado
 1,05/11/2025,Alimentación,Lala,300.34,eliminado
 2,07/11/2025,Transporte,Carga SUBE,3000.0,activo
 3,08/11/2025,Ocio,Entrada cine IMAX,4500.0,activo
@@ -20,3 +20,4 @@ id,fecha,categoria,descripcion,monto,estado
 18,24/11/2025,Alimentación,Carnicería premium,18900.0,activo
 19,25/11/2025,Transporte,Cambio de neumáticos,85000.0,activo
 20,26/11/2025,Ocio,Auriculares gaming,42000.0,activo
+22,14/11/2025,Transporte,Leche,200.0,activo

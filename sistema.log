@@ -26,3 +26,43 @@
 [27/11/2025 21:53:07] [INFO] Gasto agregado: ID=3, Monto=$1500, Categoría=Alimentación
 [28/11/2025 10:30:47] [INFO] Gasto agregado: ID=22, Monto=$200.0, Categoría=Transporte
 [28/11/2025 10:31:48] [INFO] Gasto eliminado: ID=21, Descripción=Huevos
+[28/11/2025 10:55:55] [INFO] Gasto agregado: ID=23, Monto=$33500.0, Categoría=Servicios
+[28/11/2025 17:07:30] [INFO] Gasto agregado: ID=1, Monto=$1500, Categoría=Alimentación
+[28/11/2025 17:07:30] [INFO] Gasto agregado: ID=1, Monto=$100, Categoría=Ocio
+[28/11/2025 17:07:30] [INFO] Gasto agregado: ID=2, Monto=$200, Categoría=Ocio
+[28/11/2025 17:07:30] [INFO] Gasto eliminado: ID=1, Descripción=Test
+[28/11/2025 17:07:30] [INFO] Gasto restaurado: ID=1
+[28/11/2025 17:07:30] [INFO] Gasto editado: ID=1, Cambios: Monto: $1000 → $2000, Descripción: 'Original' → 'Modificado'
+[28/11/2025 17:07:30] [INFO] Gasto agregado: ID=1, Monto=$1000, Categoría=Ocio
+[28/11/2025 17:07:30] [INFO] Gasto editado: ID=1, Cambios: Monto: $1000 → $2000
+[28/11/2025 17:07:30] [INFO] Gasto eliminado: ID=1, Descripción=Test
+[28/11/2025 17:07:30] [INFO] Gasto restaurado: ID=1
+[28/11/2025 17:07:30] [INFO] Gasto agregado: ID=1, Monto=$1000, Categoría=Alimentación
+[28/11/2025 17:07:30] [INFO] Gasto agregado: ID=2, Monto=$2000, Categoría=Transporte
+[28/11/2025 17:07:30] [INFO] Gasto agregado: ID=3, Monto=$1500, Categoría=Alimentación
+[28/11/2025 17:08:18] [INFO] Gasto agregado: ID=1, Monto=$1500, Categoría=Alimentación
+[28/11/2025 17:08:18] [INFO] Gasto eliminado: ID=1, Descripción=Test
+[28/11/2025 17:08:18] [INFO] Gasto restaurado: ID=1
+[28/11/2025 17:08:18] [INFO] Gasto editado: ID=1, Cambios: Monto: $1000 → $2000, Descripción: 'Original' → 'Modificado'
+[28/11/2025 17:08:18] [INFO] Gasto agregado: ID=1, Monto=$1000, Categoría=Ocio
+[28/11/2025 17:08:18] [INFO] Gasto editado: ID=1, Cambios: Monto: $1000 → $2000
+[28/11/2025 17:08:18] [INFO] Gasto eliminado: ID=1, Descripción=Test
+[28/11/2025 17:08:18] [INFO] Gasto restaurado: ID=1
+[28/11/2025 17:08:18] [INFO] Gasto agregado: ID=1, Monto=$1000, Categoría=Alimentación
+[28/11/2025 17:08:18] [INFO] Gasto agregado: ID=2, Monto=$2000, Categoría=Transporte
+[28/11/2025 17:08:18] [INFO] Gasto agregado: ID=3, Monto=$1500, Categoría=Alimentación
+[28/11/2025 17:10:19] [INFO] Gasto agregado: ID=23, Monto=$2500.0, Categoría=Alimentación
+[28/11/2025 17:10:37] [INFO] Gasto editado: ID=23, Cambios: Descripción: 'Huevos' → '3 Huevos'
+[28/11/2025 17:11:14] [INFO] Gasto eliminado: ID=22, Descripción=Leche
+[28/11/2025 17:33:03] [INFO] Gasto agregado: ID=23, Monto=$30000.0, Categoría=Luz
+[28/11/2025 17:34:10] [INFO] Gasto agregado: ID=1, Monto=$1500, Categoría=Alimentación
+[28/11/2025 17:34:10] [INFO] Gasto eliminado: ID=1, Descripción=Test
+[28/11/2025 17:34:10] [INFO] Gasto restaurado: ID=1
+[28/11/2025 17:34:10] [INFO] Gasto editado: ID=1, Cambios: Monto: $1000 → $2000, Descripción: 'Original' → 'Modificado'
+[28/11/2025 17:34:10] [INFO] Gasto agregado: ID=1, Monto=$1000, Categoría=Ocio
+[28/11/2025 17:34:10] [INFO] Gasto editado: ID=1, Cambios: Monto: $1000 → $2000
+[28/11/2025 17:34:10] [INFO] Gasto eliminado: ID=1, Descripción=Test
+[28/11/2025 17:34:10] [INFO] Gasto restaurado: ID=1
+[28/11/2025 17:34:10] [INFO] Gasto agregado: ID=1, Monto=$1000, Categoría=Alimentación
+[28/11/2025 17:34:10] [INFO] Gasto agregado: ID=2, Monto=$2000, Categoría=Transporte
+[28/11/2025 17:34:10] [INFO] Gasto agregado: ID=3, Monto=$1500, Categoría=Alimentación

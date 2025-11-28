@@ -216,3 +216,23 @@ def registrar_log(mensaje, tipo="INFO"):
     except Exception as e:
         print(f"⚠️ Error al escribir log: {e}")
         return False
+    
+
+def leer_logs():
+    """
+    Lee el contenido del archivo de log.
+    """
+    try:
+        base_dir = os.path.dirname(__file__)
+        ruta_log = os.path.join(base_dir, "sistema.log")
+        
+        if not os.path.exists(ruta_log):
+            print(f"El archivo no existe en: {ruta_log}")
+            return []
+
+        with open(ruta_log, "r", encoding="utf-8") as f:
+            return f.readlines()
+            
+    except Exception as e:
+        print(f"Error al leer log: {e}")
+        return None

@@ -26,11 +26,13 @@ from analisis_recursivo import (
 )
 from validaciones import (
     pedir_fecha, pedir_monto, pedir_categoria, pedir_descripcion,
-    pedir_opcion_numerica, pedir_palabra, pedir_id
+    pedir_opcion_numerica, pedir_palabra, pedir_id,
 )
+
 from archivos import (
     guardar_gastos_csv, cargar_gastos_csv,
-    guardar_calendario, cargar_calendario
+    guardar_calendario, cargar_calendario,
+    leer_logs
 )
 from presentacion import (
     mostrar_lista, mostrar_calendario, mostrar_menu_principal,
@@ -55,7 +57,6 @@ class SistemaGastos:
 
 
 def menu_gestion(sistema):
-    """Menú recursivo para gestión de gastos."""
     while True:
         mostrar_submenu_gestion()
         opcion = pedir_opcion_numerica()
@@ -82,9 +83,9 @@ def menu_gestion(sistema):
             print("\n--- EDITAR GASTO ---")
             gid = pedir_id()
             if gid not in sistema.gastos:
-                print("❌ ID no encontrado.")
+                print("ID no encontrado.")
             elif sistema.gastos[gid].get('estado') != 'activo':
-                print("❌ Este gasto está eliminado.")
+                print("Este gasto está eliminado.")
             else:
                 mostrar_gasto_individual(sistema.gastos[gid])
                 print("\n¿Qué desea modificar?")
@@ -127,7 +128,6 @@ def menu_gestion(sistema):
 
 
 def menu_consultas(sistema):
-    """Menú recursivo para consultas y filtros."""
     while True:
         mostrar_submenu_consultas()
         opcion = pedir_opcion_numerica()
@@ -198,7 +198,6 @@ def menu_consultas(sistema):
 
 
 def menu_estadisticas(sistema):
-    """Menú recursivo para estadísticas."""
     while True:
         mostrar_submenu_estadisticas()
         opcion = pedir_opcion_numerica()
@@ -256,7 +255,6 @@ def menu_estadisticas(sistema):
 
 
 def menu_herramientas(sistema):
-    """Menú recursivo para herramientas avanzadas."""
     while True:
         mostrar_submenu_herramientas()
         opcion = pedir_opcion_numerica()
@@ -305,7 +303,6 @@ def menu_herramientas(sistema):
 
 
 def menu_recursivo_analisis(sistema):
-    """Menú recursivo para análisis recursivo."""
     while True:
         mostrar_submenu_recursivo()
         opcion = pedir_opcion_numerica()
@@ -361,7 +358,6 @@ def menu_recursivo_analisis(sistema):
 
 
 def menu_papelera(sistema):
-    """Menú recursivo para papelera."""
     while True:
         mostrar_submenu_papelera()
         opcion = pedir_opcion_numerica()
@@ -400,7 +396,6 @@ def menu_papelera(sistema):
                 print(f" {len(eliminados)} gasto(s) eliminado(s) permanentemente.")
 
 def menu_archivos(sistema):
-    """Menú recursivo para archivos."""
     while True:
         mostrar_submenu_archivos()
         opcion = pedir_opcion_numerica()
@@ -426,24 +421,16 @@ def menu_archivos(sistema):
         
         elif opcion == 3:  
             print("\n--- LOG DEL SISTEMA ---")
-            try:
-                import os
-                base_dir = os.path.dirname(__file__)
-                ruta_log = os.path.join(base_dir, "sistema.log")
-                
-                with open(ruta_log, "r", encoding="utf-8") as f:
-                    lineas = f.readlines()
-                    if lineas:
-                        print("\nÚltimas 20 entradas del log:\n")
-                        for linea in lineas[-20:]:
-                            print(linea.strip())
-                    else:
-                        print("El archivo de log está vacío.")
-            except FileNotFoundError:
-                print("No se encontró el archivo de log.")
-                print(f"Ruta buscada: {ruta_log}")
-            except Exception as e:
-                print(f"Error al leer el log: {e}")
+            lineas = leer_logs()  # Usamos la función importada
+            
+            if lineas:
+                print("\nÚltimas 20 entradas del log:\n")
+                for linea in lineas[-20:]:
+                    print(linea.strip())
+            elif lineas == []:
+                print("El archivo de log existe pero está vacío o no se encontró.")
+            else:
+                print("No se pudo leer el archivo de log.")
 
 def main():
     sistema = SistemaGastos()

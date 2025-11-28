@@ -4,6 +4,7 @@
 
 import re
 from constantes import COD_CATEGORIAS, FORMATO_FECHA_REGEX
+from analisis_recursivo import CATEGORIAS_JERARQUICAS
 
 # ======================================================
 # VALIDACIONES BÁSICAS
@@ -92,17 +93,40 @@ def pedir_descripcion():
 
 
 def pedir_categoria():
+    print("\nCATEGORÍAS DISPONIBLES:")
+    categoria_final = seleccionar_categoria_recursiva(CATEGORIAS_JERARQUICAS)
+    
+    print(f"\n✓ Categoría seleccionada: {categoria_final}")
+    return categoria_final
+
+def seleccionar_categoria_recursiva(diccionario_categorias):
     """
-    Muestra categorías y pide una selección válida.
+    Permite navegar  por un diccionario de categorías.
+    Retorna la categoría seleccionada (la que no tiene más subcategorías).
     """
-    print("Categorías disponibles:")
-    for codigo, nombre in COD_CATEGORIAS.items():
-        print(f"{codigo}) {nombre}")
-    opcion = input("Seleccione categoría: ").strip()
-    while opcion not in COD_CATEGORIAS:
-        print("Opción inválida.")
-        opcion = input("Seleccione categoría: ").strip()
-    return COD_CATEGORIAS[opcion]
+
+    opciones = list(diccionario_categorias.keys())
+    
+    print("\n--- Seleccione una opción ---")
+    for i, nombre in enumerate(opciones, 1):
+        print(f"{i}) {nombre}")
+        
+    while True:
+        try:
+            seleccion = int(input("Opción: ")) - 1
+            if 0 <= seleccion < len(opciones):
+                categoria_elegida = opciones[seleccion]
+                subcategorias = diccionario_categorias[categoria_elegida]
+                
+                if not subcategorias:
+                    return categoria_elegida
+                
+                print(f"\n[Navegando en: {categoria_elegida}]")
+                return seleccionar_categoria_recursiva(subcategorias)
+            else:
+                print("Número fuera de rango.")
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
 
 
 def pedir_palabra():

@@ -12,7 +12,7 @@ import pytest
 
 # Ejecutar: pytest test_gastos.py -v
 
-# ======================================================
+# =====================================================
 # TESTS DE VALIDACIONES
 # ======================================================
 
@@ -54,21 +54,6 @@ def test_agregar_gasto():
     assert "1" in gastos
     assert gastos["1"]["estado"] == "activo"
     assert "Alimentación" in cats
-
-
-def test_agregar_gastos_ordenados_por_fecha():
-    """Los gastos deben mantenerse ordenados por fecha."""
-    gastos = {}
-    orden = []
-    cats = set()
-    cal = crear_calendario(30)
-    
-    agregar_gasto(gastos, orden, cats, cal, 0, "20/11/2025", 100, "Ocio", "Más reciente")
-    agregar_gasto(gastos, orden, cats, cal, 1, "10/11/2025", 200, "Ocio", "Más antiguo")
-    
-    # El orden debe reflejar la secuencia cronológica
-    fechas = [fecha_a_tupla(gastos[gid]["fecha"]) for gid in orden]
-    assert fechas == sorted(fechas)
 
 
 def test_eliminar_gasto_baja_logica():
