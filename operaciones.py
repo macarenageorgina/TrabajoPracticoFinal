@@ -332,7 +332,7 @@ def obtener_montos_con_iva(gastos):
     """
     return [
         {"id": g["id"], "descripcion": g["descripcion"], 
-         "monto": g["monto"], "iva": calcular_iva(g["monto"])}
+        "monto": g["monto"], "iva": calcular_iva(g["monto"])}
         for g in gastos.values()
         if g.get('estado', 'activo') == 'activo'
     ]

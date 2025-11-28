@@ -1,0 +1,22 @@
+id,fecha,categoria,descripcion,monto,estado
+21,13/10/2025,Alimentación,Huevos,200.45,activo
+1,05/11/2025,Alimentación,Lala,300.34,eliminado
+2,07/11/2025,Transporte,Carga SUBE,3000.0,activo
+3,08/11/2025,Ocio,Entrada cine IMAX,4500.0,activo
+4,10/11/2025,Servicios,Factura de luz,18900.0,activo
+5,10/11/2025,Alimentación,Delivery hamburguesas,5600.0,activo
+6,12/11/2025,Transporte,Nafta súper,25000.0,activo
+7,13/11/2025,Ocio,Suscripción Netflix,7999.0,activo
+8,14/11/2025,Servicios,Internet fibra óptica,15500.0,activo
+9,15/11/2025,Alimentación,Verdulería orgánica,8400.0,activo
+10,16/11/2025,Servicios,Gas natural,12800.0,activo
+11,17/11/2025,Transporte,Uber al aeropuerto,4200.0,activo
+12,18/11/2025,Ocio,Videojuego digital,35000.0,activo
+13,19/11/2025,Alimentación,Pizza familiar,9990.0,activo
+14,20/11/2025,Servicios,Agua corriente,6500.0,activo
+15,21/11/2025,Ocio,Entradas recital,45000.0,activo
+16,22/11/2025,Transporte,Service auto completo,28000.0,activo
+17,23/11/2025,Servicios,Cable TV HD,12500.0,activo
+18,24/11/2025,Alimentación,Carnicería premium,18900.0,activo
+19,25/11/2025,Transporte,Cambio de neumáticos,85000.0,activo
+20,26/11/2025,Ocio,Auriculares gaming,42000.0,activo

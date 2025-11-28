@@ -1,12 +1,6 @@
 ULTIMO_ID=20
 CATEGORIAS=Alimentación,Transporte,Ocio,Servicios
 
-CALENDARIO=0,0,0,0,0,0,0
-CALENDARIO=0,0,0,0,0,0,0
-CALENDARIO=0,0,0,0,0,0,0
-CALENDARIO=0,0,0,0,0,0,0
-CALENDARIO=0,0,0,0,0,0,0
-
 GASTO=1;01/01/2024;Alimentación;Compra en supermercado;2500.50
 GASTO=2;02/01/2024;Transporte;Carga SUBE;1200
 GASTO=3;03/01/2024;Ocio;Cine 3D;3500

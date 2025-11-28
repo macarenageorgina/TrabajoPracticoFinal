@@ -4,24 +4,45 @@
 
 def mostrar_encabezado():
     """Muestra encabezado de tabla de gastos."""
-    print("\n" + "="*80)
+    print("\n" + "="*85)
     print(f"{'ID':<5} {'FECHA':<12} {'MONTO':>12} {'CATEGORÍA':<15} {'DESCRIPCIÓN':<30}")
-    print("="*80)
+    print("="*85)
 
 
-def mostrar_lista(lista):
+def mostrar_gasto_individual(gasto):
+    """
+    Muestra un gasto de forma detallada.
+    """
+    print("\n" + "="*85)
+    print(" "*30 + "DATOS DEL GASTO")
+    print("="*85)
+    print(f"  ID:          {gasto['id']}")
+    print(f"  Fecha:       {gasto['fecha']}")
+    print(f"  Monto:       ${gasto['monto']:,.2f}")
+    print(f"  Categoría:   {gasto['categoria']}")
+    print(f"  Descripción: {gasto['descripcion']}")
+    print(f"  Estado:      {gasto.get('estado', 'activo').upper()}")
+    print("="*85)
+
+
+def mostrar_lista(lista, incluir_eliminados=False):
     """
     Muestra lista de gastos en formato tabla.
     """
+    if not incluir_eliminados:
+        lista = [g for g in lista if g.get('estado', 'activo') == 'activo']
+    
     if len(lista) == 0:
         print("\nNo hay gastos para mostrar.")
         return
     
     mostrar_encabezado()
     for g in lista:
+        estado_marca = " [ELIMINADO]" if g.get('estado') == 'eliminado' else ""
         print(f"{g['id']:<5} {g['fecha']:<12} ${g['monto']:>11,.2f} "
-              f"{g['categoria']:<15} {g['descripcion']:<30}")
-    print("="*80)
+            f"{g['categoria']:<15} {g['descripcion']:<30}{estado_marca}")
+    print("="*85)
+    print(f"Total de registros: {len(lista)}")
 
 
 def mostrar_calendario(calendario):
@@ -45,65 +66,118 @@ def mostrar_calendario(calendario):
     print("="*80)
 
 
-def mostrar_menu():
+def mostrar_menu_principal():
     """
-    Muestra menú principal del sistema.
+    Muestra menú principal simplificado con submenús.
     """
     print("\n" + "="*80)
     print(" "*25 + "GESTOR DE GASTOS PERSONALES")
     print("="*80)
     
-    print("\nGESTIÓN DE GASTOS")
-    print("  1)  Agregar nuevo gasto")
-    print("  2)  Editar gasto existente")
-    print("  3)  Eliminar gasto")
-    
-    print("\nCONSULTAS Y FILTROS")
-    print("  4)  Ver todos los gastos")
-    print("  5)  Ver últimos 5 gastos")
-    print("  6)  Ver primeros 5 gastos")
-    print("  7)  Ver gastos recientes (últimos 10)")
-    print("  8)  Buscar por categoría")
-    print("  9)  Buscar por fecha específica")
-    print("  10) Buscar por monto mínimo")
-    print("  11) Buscar por palabra en descripción")
-    print("  12) Buscar por categoría y monto (avanzado)")
-    print("  13) Filtrar por rango de fechas")
-    print("  14) Ver gastos ordenados por monto")
-
-    print("\nESTADÍSTICAS Y REPORTES")
-    print("  15) Resumen por categoría")
-    print("  16) Calendario mensual")
-    print("  17) Día con mayor gasto")
-    print("  18) Totales por semana")
-    print("  19) Totales por día de la semana")
-    print("  20) Análisis de categorías utilizadas")
-    print("  21) Días sin movimientos")
-    print("  22) Promedio de gastos")
-    
-    print("\nHERRAMIENTAS AVANZADAS")
-    print("  23) Aplicar descuento a gastos altos")
-    print("  24) Filtrar gastos importantes")
-    print("  25) Calcular total general")
-    print("  26) Ver mes de una fecha")
-    print("  27) Analizar descripciones")
-    
-    print("\nANÁLISIS RECURSIVO")
-    print("  28) Ver jerarquía de categorías")
-    print("  29) Buscar categoría en árbol")
-    print("  30) Reporte jerárquico de gastos")
-    print("  31) Suma recursiva de montos")
-    print("  32) Máximo recursivo en lista")
-    
-    print("\nDATOS")
-    print("  33) Guardar datos")
-    print("  34) Cargar datos")
-    
-    print("\nSALIR")
-    print("  35) Salir del sistema")
+    print("\n  1)  Gestión de Gastos")
+    print("  2)  Consultas y Filtros")
+    print("  3)  Estadísticas y Reportes")
+    print("  4)  Herramientas Avanzadas")
+    print("  5)  Análisis Recursivo")
+    print("  6)  Papelera y Backups")
+    print("  7)  Archivos y Datos")
+    print("  0)  Salir del Sistema")
     
     print("="*80)
 
+
+def mostrar_submenu_gestion():
+    """
+    Submenú: Gestión de Gastos.
+    """
+    print("\n--- GESTIÓN DE GASTOS ---")
+    print("  1) Agregar nuevo gasto")
+    print("  2) Editar gasto existente")
+    print("  3) Eliminar gasto")
+    print("  4) Ver todos los gastos")
+    print("  0) Volver al menú principal")
+
+
+def mostrar_submenu_consultas():
+    """
+    Submenú: Consultas y Filtros.
+    """
+    print("\n--- CONSULTAS Y FILTROS ---")
+    print("  1) Ver últimos 10 gastos")
+    print("  2) Ver primeros 10 gastos")
+    print("  3) Buscar por categoría")
+    print("  4) Buscar por fecha específica")
+    print("  5) Buscar por monto mínimo")
+    print("  6) Buscar por palabra en descripción")
+    print("  7) Búsqueda avanzada (categoría + monto)")
+    print("  8) Filtrar por rango de fechas")
+    print("  9) Ver gastos ordenados por monto")
+    print("  0) Volver al menú principal")
+
+
+def mostrar_submenu_estadisticas():
+    """
+    Submenú: Estadísticas y Reportes.
+    """
+    print("\n--- ESTADÍSTICAS Y REPORTES ---")
+    print("  1) Resumen por categoría")
+    print("  2) Calendario mensual")
+    print("  3) Día con mayor gasto")
+    print("  4) Totales por semana")
+    print("  5) Totales por día de la semana")
+    print("  6) Análisis de categorías utilizadas")
+    print("  7) Días sin movimientos")
+    print("  8) Promedio de gastos")
+    print("  0) Volver al menú principal")
+
+
+def mostrar_submenu_herramientas():
+    """
+    Submenú: Herramientas Avanzadas.
+    """
+    print("\n--- HERRAMIENTAS AVANZADAS ---")
+    print("  1) Calcular IVA de los gastos")
+    print("  2) Filtrar gastos importantes")
+    print("  3) Calcular total general")
+    print("  4) Ver mes de una fecha")
+    print("  5) Buscar números en descripciones")
+    print("  0) Volver al menú principal")
+
+
+def mostrar_submenu_recursivo():
+    """
+    Submenú: Análisis Recursivo.
+    """
+    print("\n--- ANÁLISIS RECURSIVO ---")
+    print("  1) Ver jerarquía de categorías")
+    print("  2) Buscar categoría en árbol")
+    print("  3) Reporte jerárquico de gastos")
+    print("  4) Suma recursiva de montos")
+    print("  5) Máximo recursivo en lista")
+    print("  0) Volver al menú principal")
+
+
+def mostrar_submenu_papelera():
+    """
+    Submenú: Papelera y Backups.
+    """
+    print("\n--- PAPELERA Y BACKUPS ---")
+    print("  1) Ver gastos eliminados")
+    print("  2) Restaurar gasto eliminado")
+    print("  3) Ver archivo de backups")
+    print("  4) Limpiar gastos eliminados permanentemente")
+    print("  0) Volver al menú principal")
+
+
+def mostrar_submenu_archivos():
+    """
+    Submenú: Archivos y Datos.
+    """
+    print("\n--- ARCHIVOS Y DATOS ---")
+    print("  1) Guardar datos")
+    print("  2) Cargar datos")
+    print("  3) Ver log del sistema")
+    print("  0) Volver al menú principal")
 
 
 def mostrar_resumen_categoria(resumen):
@@ -181,3 +255,21 @@ def confirmar_accion(mensaje):
     """
     respuesta = input(f"{mensaje} (s/n): ").strip().lower()
     return respuesta == "s"
+
+
+def mostrar_iva_gastos(gastos_con_iva):
+    """
+    Muestra gastos con su IVA calculado.
+    """
+    print("\n" + "="*90)
+    print(" "*30 + "CÁLCULO DE IVA (21%)")
+    print("="*90)
+    print(f"{'ID':<5} {'DESCRIPCIÓN':<35} {'MONTO':>12} {'IVA':>12} {'TOTAL':>12}")
+    print("="*90)
+    
+    for item in gastos_con_iva:
+        total = item['monto'] + item['iva']
+        print(f"{item['id']:<5} {item['descripcion']:<35} "
+            f"${item['monto']:>11,.2f} ${item['iva']:>11,.2f} ${total:>11,.2f}")
+    
+    print("="*90)
