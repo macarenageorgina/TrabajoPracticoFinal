@@ -399,7 +399,6 @@ def menu_papelera(sistema):
                 sistema.modificado = True
                 print(f" {len(eliminados)} gasto(s) eliminado(s) permanentemente.")
 
-
 def menu_archivos(sistema):
     """Menú recursivo para archivos."""
     while True:
@@ -425,10 +424,14 @@ def menu_archivos(sistema):
             if ok2:
                 sistema.calendario = cal
         
-        elif opcion == 3:  # Ver log
+        elif opcion == 3:  
             print("\n--- LOG DEL SISTEMA ---")
             try:
-                with open("sistema.log", "r", encoding="utf-8") as f:
+                import os
+                base_dir = os.path.dirname(__file__)
+                ruta_log = os.path.join(base_dir, "sistema.log")
+                
+                with open(ruta_log, "r", encoding="utf-8") as f:
                     lineas = f.readlines()
                     if lineas:
                         print("\nÚltimas 20 entradas del log:\n")
@@ -438,7 +441,9 @@ def menu_archivos(sistema):
                         print("El archivo de log está vacío.")
             except FileNotFoundError:
                 print("No se encontró el archivo de log.")
-
+                print(f"Ruta buscada: {ruta_log}")
+            except Exception as e:
+                print(f"Error al leer el log: {e}")
 
 def main():
     sistema = SistemaGastos()

@@ -55,7 +55,7 @@ def buscar_gastos_por_palabra(gastos, palabra):
 # ======================================================
 
 def agregar_gasto(gastos, orden, categorias_usadas, calendario,
-                ultimo_id, fecha, monto, categoria, descripcion):
+            ultimo_id, fecha, monto, categoria, descripcion):
     """
     Agrega un nuevo gasto al sistema, insertándolo ordenado por fecha.
     """
@@ -73,15 +73,13 @@ def agregar_gasto(gastos, orden, categorias_usadas, calendario,
     
     gastos[sid] = gasto
     
-    # Insertar en orden cronológico
     fecha_nueva = fecha_a_tupla(fecha)
-    pos = 0
+    pos = len(orden)  
+    
     for i, gid in enumerate(orden):
         if gid in gastos and gastos[gid].get('estado') == 'activo':
             fecha_existente = fecha_a_tupla(gastos[gid]["fecha"])
-            if fecha_nueva > fecha_existente:
-                pos = i + 1
-            else:
+            if fecha_nueva < fecha_existente:  
                 break
     
     orden.insert(pos, sid)

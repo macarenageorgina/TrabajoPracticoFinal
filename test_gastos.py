@@ -8,7 +8,7 @@ from matrices import *
 from validaciones import validar_fecha_regex
 from analisis_recursivo import *
 from constantes import COD_CATEGORIAS
-import pytest
+import pytest 
 
 # Ejecutar: pytest test_gastos.py -v
 

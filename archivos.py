@@ -214,5 +214,5 @@ def registrar_log(mensaje, tipo="INFO"):
         return True
         
     except Exception as e:
-        print(f"Error al escribir log: {e}")
+        print(f"⚠️ Error al escribir log: {e}")
         return False
